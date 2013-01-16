@@ -1,0 +1,326 @@
+/*
+    Document   : ossature
+    Description:
+        CSS de structure des pages.
+*/
+body { font-size: 13px; }
+
+/********************************** Design des liens **************************************/
+
+a { border:none; text-decoration:underline; font-size:inherit; outline: none; }
+
+
+/********************************** STRUCTURE DU SITE **************************************/
+
+#bigDiv {
+	display: block;
+	position: absolute;
+	top: 0px; bottom: 0px; left: 0px; right: 0px;
+	overflow: hidden;
+}
+
+#topPage {
+	position: absolute;
+	top: 0px; left: 10px; right: 10px;
+	height: 90px;
+	display : none;
+}
+	#logo {
+		position: absolute;
+		top: 5px; left: 20px;
+/*		width: 200px;*/
+		padding: 5px;
+		text-align: center;
+		z-index: 900;
+	}
+	#titrePage {
+		position: absolute;
+		top: 20px; left: 350px; right: 400px;
+		padding: 5px;
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+	#connexion {
+		position: absolute;
+		top: 20px; right: 0px;
+		width: 300px;
+		padding: 5px;
+		font-size: 0.9em;
+	}
+
+	#connexionRobert {
+		text-align: auto;
+		width: 99%;
+		padding-top:30px;
+		text-align:center;
+	}
+
+
+#Page {
+	position: absolute;
+	top: 2px; left: 5px; right: 5px; bottom: 2px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	z-index: 500;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 0px;
+}
+
+.headPage {
+	padding: 5px;
+	height: 70px;
+}
+
+.colonne {
+	padding: 5px;
+	border: 1px solid;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.Lv { position:absolute; top:75px; left:5px;  right:90.2%; bottom:5px; box-shadow: inset 0 0 5px #2E0E3D;  text-align: center;}
+.Cv { position:absolute; top:75px; left:10%;   right:10%;  bottom:5px; box-shadow: 0 1px 3px #2E0E3D; z-index: 500; }
+
+.Lh { position:absolute; top:5px; left:5px; right:10%; height:85px; box-shadow: inset 0 0 5px #2E0E3D; text-align: left;}
+.Lh div { display: inline-block; }
+.Ch { position:absolute; top:75px; left:5px; right:10%; bottom:5px; box-shadow: 0 1px 3px #2E0E3D; z-index: 500; }
+
+.R { position:absolute; top:75px; left:90.2%; right:5px;  bottom:5px; box-shadow: inset 0 0 6px #2E0E3D; }
+
+
+#versionRobert { position: absolute; bottom:5px; left: 0px; right: 0px; text-align: center;}
+
+
+.pageContent {
+	position: absolute;
+	top: 10px; bottom: 5px;
+	left: 8px; right: 8px;
+	font-size: 1em;
+}
+
+#listingPage {
+	position: absolute;
+	top: 0px; bottom: 5px;
+	left: 0px; right: 0px;
+	overflow: auto;
+	box-shadow: inset 0 0 6px #888888;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#modifieurPage {
+	position: absolute;
+	left: 0px; right: 0px;
+	height: 250px;
+	bottom: 5px;
+	box-shadow: 2px 2px 10px 2px #666666;
+}
+
+.ajouteurPage {
+	padding: 20px 10px 40px 10px;
+	text-align: center;
+	font-size: 1.2em;
+	box-shadow: inset 0 0 8px #888888;
+}
+
+/************************************* MENUS  ******************************************/
+/* Menu principal */
+.menuv_icon			{ position: relative; width:99%; text-align:center; margin-bottom: 15px; box-shadow: 1px 2px 2px #2E0E3D; padding-top:5px;}
+.menuv_icon:hover	{ box-shadow: 0px 0px 10px #BBBBBB; }
+.menuv_icon:active	{ box-shadow: none; }
+
+.menuh_icon			{ display: inline-block; vertical-align: top; text-align:center; height: 60px; width: 100px; margin: 5px 17px; box-shadow: 1px 2px 2px #2E0E3D; line-height: 0.8em; }
+.menuh_icon:hover	{ box-shadow: 0px 0px 10px #BBBBBB; }
+.menuh_icon:active	{ box-shadow: none; }
+.menuh_icon img		{ height:60px !important; width:60px !important; }
+
+
+.Vseparator	  { height: 40px; width: 0px; border: 3px double; margin: 0px 15px;
+			    -moz-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px; }
+
+#retourAjax {
+	position: absolute;
+	display: none;
+	top: 5px;
+	right: 10px;
+	width: 30%;
+	padding: 12px 5px 0px 10px;
+	z-index: 9999;
+	box-shadow: 0px 3px 10px #666666;
+}
+
+.homeSection { border: 1px solid #333; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
+
+
+/************************************ TABLEAUX ******************************************/
+.tableListe { width: 100%; text-align: center; border-collapse: collapse; box-shadow: 0 5px 10px #888888; }
+.tableListe td { padding: 3px; }
+.tableListe td[popup] { cursor: pointer; }
+
+
+/************************************* BOUTONS ******************************************/
+
+.bouton			{ box-shadow: 1px 2px 2px #BBBBBB; }
+.bouton:hover	{ left: -1px; top: -1px; box-shadow: 2px 5px 4px #BBBBBB; }
+.bouton:active	{ box-shadow: none; }
+
+.boutonMenu {
+    position: relative;
+    display: inline-block;
+	vertical-align: top;
+    font-weight: normal;
+	cursor: pointer;
+    overflow: visible;
+    padding: 0;
+    text-align: center;
+    text-decoration: none !important;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding: 4px 8px;
+    margin: 0px 8px;
+}
+.boutonMenu a { text-decoration: none !important; font-weight: normal; }
+
+#btnClose{ float: right; cursor: pointer; margin-right: 10px; margin-top: 2px; }
+
+select { padding: 3px; font-size: 0.9em; border: 1px solid; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+
+*[popup] { cursor: pointer; }
+
+.hide { display: none; }
+.show { display: block; }
+
+
+
+/********************************** PAGE "SON" **************************************/
+
+#Live {
+	left:200px;
+	background-image:url('../gfx/son/LiveNB.jpg');
+}
+#Studio {
+	left:360px;
+	background-image:url('../gfx/son/StudioNB.jpg');
+}
+#Tournage {
+	left:520px;
+	background-image:url('../gfx/son/TournageNB.jpg');
+}
+#Acoustique {
+	left:680px;
+	background-image:url('../gfx/son/AcoustiqueNB.jpg');
+}
+#Potes {
+	left:845px;
+	background-image:url('../gfx/son/PotesNB.jpg');
+}
+
+#helperTxt, #LiveTxt, #StudioTxt, #TournageTxt, #AcoustiqueTxt, #PotesTxt {
+	position:relative;
+	top:100px;
+}
+
+.sonBtn {
+	position:absolute;
+	top:0px;
+	width: 150px;
+	height: 68px;
+	margin: 10px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	cursor: pointer;
+	display: none;
+	z-index:999;
+}
+
+
+/********************************** CLASSES UTILES **************************************/
+
+.shadowOut	{ box-shadow: 0px 0px 10px #BBB; }
+.shadowIn	{ box-shadow: inset 0 0 8px #888888; }
+
+.center		{ text-align: center; }
+.leftText	{ text-align: left; }
+.rightText	{ text-align: right; }
+
+.tiers		{ width: 32%; }
+.deuxTiers	{ width: 65%; }
+.demi		{ width: 49%; }
+.quart      { width: 24%; }
+.cinquieme  { width: 19%; }
+
+.pico		{ font-size: 0.2em; }
+.nano		{ font-size: 0.4em; }
+.micro		{ font-size: 0.6em; }
+.mini		{ font-size: 0.8em; }
+.petit		{ font-size: 0.9em; }
+.moyen		{ font-size: 1.1em; }
+.gros		{ font-size: 1.2em; }
+.big		{ font-size: 1.4em; }
+.enorme		{ font-size: 1.5em; }
+
+.pad3		{ padding: 3px;  }
+.pad5		{ padding: 5px;  }
+.padH5		{ padding-top: 5px; padding-bottom: 5px; }
+.pad10		{ padding: 10px; }
+.pad20		{ padding: 10px 20px; }
+.pad30L		{ padding-left: 30px; }
+.padV10		{ padding-left: 10px; padding-right: 10px; }
+.padB5      { padding-bottom: 5px; }
+.padB10     { padding-bottom:10px; }
+
+.noMarge	{ margin: 0px; }
+.marge30l	{ margin-left: 30px; }
+.marge10l	{ margin-left: 10px; }
+.marge30r	{ margin-right: 30px; }
+.marge10r	{ margin-right: 10px; }
+.margeTop5	{ margin-top: 5px; }
+.margeTop10	{ margin-top: 10px; }
+.marge15bot { margin-bottom: 15px; }
+.marge5		{ margin:  5px; }
+.marge10	{ margin: 10px; }
+
+.inline		{ display: inline-block; }
+.top		{ vertical-align: top; }
+.mid		{ vertical-align: middle; }
+.bot		{ vertical-align: bottom; }
+
+.floatRight	{ float: right; }
+.floatLeft	{ float: left; }
+
+.miniCal	{ font-size:0.6em; display: inline-block ; }
+
+.red		{ color:#f00; }
+
+.doigt		{ cursor: pointer; }
+
+.bordFin	{ border:1px solid; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
+
+.gras		{ font-weight: bold; }
+
+/******************************* RETOUCHES JQUERY UI *************************************/
+
+
+.ui-widget-header { cursor:default; }
+.ui-dialog		  { box-shadow: 12px 16px 30px 10px #666666;  }
+
+
+/********************************* TOOLTIPS POPUPS ***************************************/
+
+#toolTipPopup, #tooltipWeb {
+	position: absolute;
+	display: none;
+	left: 40%;
+	top: 40%;
+	padding: 10px 15px;
+}
+
+.structInfos{  }
+.structInterlock {}
+.info{ width:250px; display:inline-block; }
+.structItem { }
+.interlock { display:inline-block; width:150px; heigth:150px;  }
+.interlockItem {   }
