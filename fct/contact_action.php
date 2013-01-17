@@ -17,18 +17,18 @@ if (isset($_POST[$_SESSION['qaptcha_key']]) && empty($_POST[$_SESSION['qaptcha_k
 		$MessageExp = stripslashes($MessageExp);
 		$DateArray = getdate();
 		$DateMail = $DateArray['mday']."/".$DateArray['mon']."/".$DateArray['year'] ;
-		
+
 		$mail_text='<body  bgcolor="#DDD">
 		<font color="#333">
 		<b>Hey dude !</b><br><br>';
-		
+
 		$subject = "Message depuis polosson.com";
 		if (isset($_POST['domain'])) {
 			$mail_text .= 'Demande de devis, pour le nom de domaine suivant : <b>'.$_POST['domain'].'</b>';
 			$subject = "Demande de devis pour un site";
 		}
 		else $mail_text .= 'Nouveau message depuis polosson.com !!';
-		
+
 		$mail_text .= '<br><br>
 		Ecrit par : <font color="#000"><b>'.$NomExp.'</b></font>, le '.$DateMail.'<br><br>
 		---------------------------------------------------------<br>
@@ -36,7 +36,7 @@ if (isset($_POST[$_SESSION['qaptcha_key']]) && empty($_POST[$_SESSION['qaptcha_k
 		---------------------------------------------------------<br><br>
 		</font></body>';
 
-		if (mail("polo@citadelrock.fr", $subject, $mail_text, $headers))
+		if (mail("polo@polosson.com, mathieu@d2mphotos.fr", $subject, $mail_text, $headers))
 			 header("Location: ../index.php?go=9contact&ret=ok&nomExp=$NomMAJ");			// Confirmation d'envoi
 		else header("Location: ../index.php?go=9contact&ret=err");							// ou bien message d'erreur...
 	}
