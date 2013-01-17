@@ -4,7 +4,7 @@
 		$hideMessage = '';
 		switch ($_GET['ret']) {
 			case 'ok':
-				$message = '<span class="gros gras">Merci '.@$_GET['nomExp'].' ! Votre message a bien été envoyé !</span><br /><br />Je vous répondrai dans les meilleurs délais.';
+				$message = '<span class="gros gras">Merci '.@$_GET['nomExp'].' ! Votre message a bien été envoyé !</span><br /><br />Nous vous répondrons dans les meilleurs délais.';
 				break;
 			case 'err':
 				$message = "<span class='gros gras red'>Un problème est survenu pendant l'envoi du message...</span><br /><br /><span class='red'>Merci de réessayer plus tard.</span>";
