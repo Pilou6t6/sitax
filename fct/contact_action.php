@@ -20,14 +20,14 @@ if (isset($_POST[$_SESSION['qaptcha_key']]) && empty($_POST[$_SESSION['qaptcha_k
 
 		$mail_text='<body  bgcolor="#DDD">
 		<font color="#333">
-		<b>Hey dude !</b><br><br>';
+		<b>Hey dudes !</b><br><br>';
 
-		$subject = "Message depuis polosson.com";
+		$subject = "Message depuis robertManager.org";
 		if (isset($_POST['domain'])) {
 			$mail_text .= 'Demande de devis, pour le nom de domaine suivant : <b>'.$_POST['domain'].'</b>';
 			$subject = "Demande de devis pour un site";
 		}
-		else $mail_text .= 'Nouveau message depuis polosson.com !!';
+		else $mail_text .= 'Nouveau message depuis robertManager.org !!';
 
 		$mail_text .= '<br><br>
 		Ecrit par : <font color="#000"><b>'.$NomExp.'</b></font>, le '.$DateMail.'<br><br>
