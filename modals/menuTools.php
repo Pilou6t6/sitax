@@ -28,13 +28,16 @@ function list_themes () {
 
 <div id="reseauSocial">
 	<h4>Derniers dons</h4>
-
+	<span class="mini"><b>2000€</b> : ACOUSMIE</span>
+	<br />
 	<br />
 	<h4>Télécharger</h4>
-
+	<a href="https://github.com/RobertManager/robert/archive/master.zip" target="blank">ZIP</a>
+	<br />
 	<br />
 	<h4>Cloner</h4>
-
+	<a href="https://github.com/RobertManager/robert" target="blank"><img src="gfx/icones/logo-github.png" /></a><br />
+	<code>git://github.com/RobertManager/robert.git</code>
 
 </div>
 
