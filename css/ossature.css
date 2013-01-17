@@ -194,49 +194,6 @@ select { padding: 3px; font-size: 0.9em; border: 1px solid; -moz-border-radius: 
 
 
 
-/********************************** PAGE "SON" **************************************/
-
-#Live {
-	left:200px;
-	background-image:url('../gfx/son/LiveNB.jpg');
-}
-#Studio {
-	left:360px;
-	background-image:url('../gfx/son/StudioNB.jpg');
-}
-#Tournage {
-	left:520px;
-	background-image:url('../gfx/son/TournageNB.jpg');
-}
-#Acoustique {
-	left:680px;
-	background-image:url('../gfx/son/AcoustiqueNB.jpg');
-}
-#Potes {
-	left:845px;
-	background-image:url('../gfx/son/PotesNB.jpg');
-}
-
-#helperTxt, #LiveTxt, #StudioTxt, #TournageTxt, #AcoustiqueTxt, #PotesTxt {
-	position:relative;
-	top:100px;
-}
-
-.sonBtn {
-	position:absolute;
-	top:0px;
-	width: 150px;
-	height: 68px;
-	margin: 10px;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
-	border-radius: 15px;
-	cursor: pointer;
-	display: none;
-	z-index:999;
-}
-
-
 /********************************** CLASSES UTILES **************************************/
 
 .shadowOut	{ box-shadow: 0px 0px 10px #BBB; }
@@ -324,3 +281,9 @@ select { padding: 3px; font-size: 0.9em; border: 1px solid; -moz-border-radius: 
 .structItem { }
 .interlock { display:inline-block; width:150px; heigth:150px;  }
 .interlockItem {   }
+
+code {
+	border: 1px solid #888888;
+	padding: 0px;
+	background-color: rgba(128, 128, 128, 0.4);
+}
