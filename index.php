@@ -39,7 +39,7 @@ require_once ('head_html.php');
 			<div class="colonne C<?php echo $orient; ?> bordSection ui-widget ui-corner-all fondSect2 petit" id="centerCol">
 
 				<div class="ui-state-error ui-corner-all center top gros" id="retourAjax"></div>
-				Hoydi ho on Git
+				
 				<?php
 					if ( isset($_GET["go"])) {
 						$goto = FOLDER_PAGES . '/p_' . $_GET["go"] .'.php';
