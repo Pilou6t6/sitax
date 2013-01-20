@@ -11,6 +11,8 @@
 
 <div class="pageContent">
 
+	<h1>Wiki</h1>
+	
 	<?php
 	$np = 0;
 	foreach (glob('../robert.wiki/*.md') as $wikiFile) :

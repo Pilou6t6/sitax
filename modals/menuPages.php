@@ -12,9 +12,9 @@
 			 $classUi = 'highlight';
 		else $classUi = 'default';
 		// Affichage de l'icone du menu
-		echo "<div class='ui-state-$classUi ui-corner-all menu".$orient."_icon menu_entry' popup='$nomLien'>
-				<a href='?go=$nomPage'><img class='img_menu' src='gfx/icones/menu/$nomIcone.png' alt='$nomLien'/></a>
-			</div>";
+		echo "<a href='?go=$nomPage'><div class='ui-state-$classUi ui-corner-all menu".$orient."_icon menu_entry' popup='$nomLien'>
+				<img class='img_menu' src='gfx/icones/menu/$nomIcone.png' alt='$nomLien'/>
+			</div></a>";
 	}
 
 ?>

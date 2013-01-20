@@ -283,7 +283,8 @@ select { padding: 3px; font-size: 0.9em; border: 1px solid; -moz-border-radius: 
 .interlockItem {   }
 
 code {
+	font-size: 0.9em;
 	border: 1px solid #888888;
 	padding: 0px;
-	background-color: rgba(128, 128, 128, 0.4);
+	background-color: rgba(128, 128, 128, 0.2);
 }
