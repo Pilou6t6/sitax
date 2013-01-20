@@ -7,13 +7,18 @@
 
 <div class="pageContent">
 
-	<div style="position:absolute; bottom:0%; right:0%;text-align:center; font-size:4em; color:purple;">
-		Essayez Robert ! !<br />
+	<h1>Essayez ROBERT en live !</h1>
+
+	<div class="marge30l gros">
+		<p>
+			Utilisez les <b>codes d'accès</b> suivants :
+			<ul>
+				<li>Login : <code>demo@robertmanager.org</code><br /></li>
+				<li>Pass : <code>demo</code></li>
+			</ul>
+		</p>
 		<a href="http://www.robertdemo.polosson.com" target="_new"><img src="gfx/icones/berto.png"></a>
-		Login : demo@robertmanager.org <br />Pass : demo <br />
-
-		<span style="font-size:0.25em; color:black;">Illustration : Robert Bidochon par Binet</span>
-		</div>
-
+		<p class="micro">(Illustration : Robert Bidochon, par Binet) !! &COPY; !!</p>
+	</div>
 
 </div>
