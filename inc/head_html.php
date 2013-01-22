@@ -25,7 +25,6 @@ function chooseThemeFolder() {
 
 	<link type="text/css" href="<? echo chooseThemeFolder(); ?>/jquery-ui-1.8.17.custom.css" rel="stylesheet" />
 	<link type="text/css" href="css/ossature.css" rel="stylesheet" />
-	<link type="text/css" href="css/FeedEk.css" rel="stylesheet" />
 	<link type="text/css" href="css/QapTcha.jquery.css" rel="stylesheet" media="screen"/>
 	<link type="text/css" href="<? echo chooseThemeFolder(); ?>/colors.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/craftyslide.css" />
