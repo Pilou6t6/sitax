@@ -6,7 +6,12 @@
 		return value.replace(/\n/g, "<br />");
 	}
 
+	$.ajaxSetup({
+		headers: { Origin: "http://www.robert.polosson.com" }
+	});
+
 	$(function(){
+
 		// récup des bugs chez GitHub
 		$.get('https://api.github.com/repos/RobertManager/robert/issues?state=open&labels=bug', function(data) {
 			$('#bugList').html('');
