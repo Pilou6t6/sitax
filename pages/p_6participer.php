@@ -61,7 +61,7 @@
 	Ils permettent de catégoriser les informations :
 	<ul>
 		<li><b>Bug</b> - quand quelque chose ne se passe pas comme prévu</li>
-		<li><b>Enhancement</b> - Si vous avez une idée de fonction ou d'amélioration</li>
+		<li><b>wantMore</b> - Si vous avez une idée de fonction ou d'amélioration</li>
 		<li><b>Question</b> - Quelque chose que vous ne comprenez pas</li>
 	</ul>
 
