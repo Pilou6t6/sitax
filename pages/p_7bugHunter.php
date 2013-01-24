@@ -6,9 +6,35 @@
 		return value.replace(/\n/g, "<br />");
 	}
 
+	function afficheIssue (issue, div) {
+		console.log(issue);
+		var dateIssue = Date.parseExact(issue.created_at, 'yyyy-MM-ddTHH:mm:ssZ');
+		var assignee = '';
+		if (issue.assignee != null) {
+			assignee = '<div class="inline petit floatRight ui-state-error ui-corner-all" style="padding:2px 4px 0px 3px;">'
+						+ '<div class="inline top"> <img src="'+issue.assignee.avatar_url+'" width="18" /></div> '
+						+ '<div class="inline top"><b>'+issue.assignee.login+'</b> est dessus !</div>'
+					+  '</div>';
+		}
+		var comment = '';
+		if (issue.comments > 0) {
+			comment = '<div class="inline petit floatRight pad3">'
+						+ '<a href="'+issue.comments_url+'" target="_new"><u>'+issue.comments+' commentaire(s)</u></a>'
+					+ '</div><br /><br />';
+		}
+		div.append('<div class="ui-state-active ui-corner-top pad3 gros gras margeTop10">#'+issue.number+' '+issue.title + '</div>'
+				+  '<div class="ui-state-default ui-corner-bottom pad3">'
+					+ assignee
+					+ '<div class="petit ui-state-disabled pad3">par <b>'+issue.user.login+'</b>, le <i>'+dateIssue.toString('dd/MM/yyyy, HH:mm')+'</i></div>'
+					+ nl2br(issue.body)
+					+ '<br />'+comment
+				+  '</div>');
+	}
+
 	$.ajaxSetup({
 		headers: { Origin: "http://www.robert.polosson.com" }
 	});
+
 
 	$(function(){
 
@@ -17,13 +43,7 @@
 			$('#bugList').html('');
 			data.reverse();
 			$.each(data, function(idx, issue){
-				console.log(issue);
-				var dateIssue = Date.parseExact(issue.created_at, 'yyyy-MM-ddTHH:mm:ssZ');
-				$('#bugList').append('<div class="ui-state-active ui-corner-top pad3 gros gras margeTop10">#'+issue.number+' '+issue.title + '</div>');
-				$('#bugList').append('<div class="ui-state-default ui-corner-bottom pad3">'
-										+ '<div class="petit ui-state-disabled pad3">par <b>'+issue.user.login+'</b>, le <i>'+dateIssue.toString('dd/MM/yyyy, HH:mm')+'</i></div>'
-										+ nl2br(issue.body)
-									+'</div>');
+				afficheIssue(issue, $('#bugList'));
 			});
 		}, 'json');
 
@@ -32,14 +52,7 @@
 			$('#wantMoreList').html('');
 			data.reverse();
 			$.each(data, function(idx, issue){
-				console.log(issue);
-				var dateIssue = Date.parseExact(issue.created_at, 'yyyy-MM-ddTHH:mm:ssZ');
-				$('#wantMoreList').append('<div class="ui-state-active ui-corner-top pad3 gros gras margeTop10">#'+issue.number+' '+issue.title + '</div>');
-				$('#wantMoreList').append('<div class="ui-state-default ui-corner-bottom pad3">'
-										+ '<div class="petit ui-state-disabled pad3">par <b>'+issue.user.login+'</b>, le <i>'+dateIssue.toString('dd/MM/yyyy, HH:mm')+'</i></div>'
-										+ nl2br(issue.body)
-									+'</div>');
-			});
+				afficheIssue(issue, $('#wantMoreList'));});
 		}, 'json');
 
 	});
