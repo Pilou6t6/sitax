@@ -67,7 +67,7 @@
 		// récup des want-more chez GitHub
 		$.get('https://api.github.com/repos/RobertManager/robert/issues?state=open&labels=wantMore', function(data) {
 			$('#wantMoreList').html('');
-//			data.reverse();
+			data.reverse();
 			$.each(data, function(idx, issue){
 				afficheIssue(issue, $('#wantMoreList'));});
 		}, 'json');
@@ -96,7 +96,7 @@
 				localStorage.removeItem("codeAuthGitHub");
 			}
 			else
-				window.location('https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo');
+				window.location = 'https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo';
 //				window.open('https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo');
 
 		});
@@ -113,7 +113,7 @@
 				localStorage.removeItem("codeAuthGitHub");
 			}
 			else
-				window.location('https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo');
+				window.location = 'https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo';
 //				window.open('https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo');
 		});
 
