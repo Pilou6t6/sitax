@@ -18,9 +18,10 @@
 		}
 		var comment = '';
 		if (issue.comments > 0) {
-			comment = '<div class="inline petit floatRight pad3">'
-						+ '<a href="'+issue.comments_url+'" target="_new"><u>'+issue.comments+' commentaire(s)</u></a>'
-					+ '</div><br /><br />';
+			comment = '<div class="petit ui-state-error-text pad3 doigt commentBtn" urlComm="'+issue.comments_url+'" idIssue="'+issue.id+'" numIssue="'+issue.number+'">'
+						+ '<u>'+issue.comments+' commentaire(s)</u>'
+					+ '</div>'
+					+ '<div class="hide petit commentsList" idIssue="'+issue.id+'"></div>';
 		}
 		div.append('<div class="ui-state-active ui-corner-top pad3 gros gras margeTop10">#'+issue.number+' '+issue.title + '</div>'
 				+  '<div class="ui-state-default ui-corner-bottom pad3">'
@@ -74,6 +75,23 @@
 				afficheIssue(issue, $('#wantMoreList'));});
 		}, 'json');
 
+		// récup de commentaire
+		$('.pageContent').on('click', '.commentBtn', function() {
+			var urlComm  = $(this).attr('urlComm');
+			var idIssue  = $(this).attr('idIssue');
+			var numIssue = $(this).attr('numIssue');
+			var comments = '';
+			$.get(urlComm, function (data) {
+				$('.commentsList').html('').hide();
+				$.each(data, function(idx, comm) {
+					var dateComm = Date.parseExact(comm.created_at, 'yyyy-MM-ddTHH:mm:ssZ');
+					comments += '<div class="petit ui-state-disabled rightText">De <b>'+comm.user.login+'</b>, le '+dateComm.toString('dd/MM/yyyy, HH:mm')+'</div>';
+					comments += '<div class="marge10l ui-state-default ui-corner-all pad3">'+comm.body+'</div>';
+				});
+				comments += '<div class="rightText petit"><span class="bouton pad3"><a href="https://github.com/RobertManager/robert/issues/'+numIssue+'" target="_new">Répondre</a></div><br />';
+				$('.commentsList[idIssue='+idIssue+']').html(comments).show(300);
+			}, 'json');
+		});
 
 		// Bouton ajout de bug
 		$('.btnAddIssue').click(function(){
