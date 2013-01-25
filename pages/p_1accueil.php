@@ -5,7 +5,7 @@
 <script>
 	$(function(){
 		$('#divRss').FeedEk({
-			FeedUrl : 'https://github.com/RobertManager/robert/commits/0bc921adf9ca298e5c885451fc5a995f8b9b4867.atom',
+			FeedUrl : 'https://github.com/RobertManager/robert/commits/master.atom',
 			MaxCount : 10,
 			ShowDesc : true,
 			ShowPubDate:true
@@ -44,10 +44,10 @@
 	<p style="clear: both;">&nbsp;</p>
 
 	<div class="gros ui-state-default ui-corner-all pad3">
-		<div class="inline mid"><b>Suivez les derniers changements du code en temps réel ici :</b></div>
+		<div class="inline mid"><b>Suivez les (10) derniers changements du code en temps réel ici :</b></div>
 		<div class="inline mid">
-			<a href="https://github.com/RobertManager/robert/commits/0bc921adf9ca298e5c885451fc5a995f8b9b4867.atom">
-				<img src="gfx/icones/rss2.png" /> <small>(flux RSS)</small>
+			<a href="https://github.com/RobertManager/robert/commits/master.atom">
+				<img src="gfx/icones/rss2.png" class="mid" /> <small class="mid">(flux RSS)</small>
 			</a>
 		</div>
 	</div>
