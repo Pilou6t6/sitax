@@ -48,6 +48,8 @@
 		});
 		$.post('https://api.github.com/repos/RobertManager/robert/issues?access_token=' + token, params, function(rep){
 			console.log(rep);
+			alert('Merci pour votre contribution !');
+			window.location = "index.php?go=7bugHunter";
 		}, 'json');
 		$('#modalAddIssue').dialog('close');
 	}
