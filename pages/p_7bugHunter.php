@@ -72,6 +72,23 @@
 				afficheIssue(issue, $('#wantMoreList'));});
 		}, 'json');
 
+
+		// Bouton ajout de bug
+		$('.btnAddIssue').click(function(){
+			localStorage['addIssueType'] = $(this).attr('issueType');
+			window.location = 'https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo';
+//			window.open('https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo');
+		});
+
+		// Bouton ajout de want-more
+		$('.btnAddIssue').click(function(){
+			localStorage['addIssueType'] = $(this).attr('issueType');
+			window.location = 'https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo';
+//			window.open('https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo');
+		});
+
+
+		// Récup du token chez GitHub et ouverture de la modal
 		if (localStorage['codeAuthGitHub']) {
 			console.log('récup du token chez GitHub...');
 			var code = localStorage['codeAuthGitHub'];
@@ -80,43 +97,18 @@
 				$('#access_token').val(access_token);
 				$.getJSON('https://api.github.com/user?access_token=' + access_token, function (user) {
 					$('#username').val(user.login);
+					var issueType = localStorage['addIssueType'];
+					$('#modalAddIssue').dialog({
+						autoOpen: true, height: 500, width: 660, modal: true, title: 'Ajouter un '+issueType.toUpperCase(),
+						open: function(e, ui){ $('#issueTypeLabel').addClass('ui-state-error').html(issueType.toUpperCase()); },
+						buttons:{'Envoyer' : function() { sendNewIssue(issueType); },
+								 'Annuler' : function() { $(this).dialog('close'); }}
+					});
+					localStorage.removeItem("codeAuthGitHub");
+					localStorage.removeItem("addIssueType");
 				});
 			});
 		}
-
-		// Bouton ajout de bug
-		$('#btnAddBug').click(function(){
-			if (localStorage['codeAuthGitHub']) {
-				$('#modalAddIssue').dialog({
-					autoOpen: true, height: 500, width: 660, modal: true, title: 'Ajouter un BUG',
-					open: function(e, ui){ $('#issueTypeLabel').addClass('ui-state-error').html('BUG'); },
-					buttons:{'Envoyer' : function() { sendNewIssue('bug'); },
-							 'Annuler' : function() { $(this).dialog('close'); }}
-				});
-				localStorage.removeItem("codeAuthGitHub");
-			}
-			else
-				window.location = 'https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo';
-//				window.open('https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo');
-
-		});
-
-		// Bouton ajout de want-more
-		$('#btnAddWM').click(function(){
-			if (localStorage['codeAuthGitHub']) {
-				$('#modalAddIssue').dialog({
-					autoOpen: true, height: 500, width: 660, modal: true, title: 'Ajouter un "want-more"',
-					open: function(e, ui){ $('#issueTypeLabel').addClass('ui-state-active').html('Want-More'); },
-					buttons:{'Envoyer' : function() { sendNewIssue('wantMore'); },
-							 'Annuler' : function() { $(this).dialog('close'); }}
-				});
-				localStorage.removeItem("codeAuthGitHub");
-			}
-			else
-				window.location = 'https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo';
-//				window.open('https://github.com/login/oauth/authorize?client_id=47884071d6faa11df001&scope=public_repo');
-		});
-
 	});
 </script>
 
@@ -126,7 +118,7 @@
 	<div class="inline top marge30r" style="width:45%;">
 		<div class="ui-widget-header ui-corner-all big gras center pad5">
 			<div class="floatRight nano">
-				<span class="bouton" title="Ajouter un 'BUG'" id="btnAddBug"><span class="ui-icon ui-icon-plusthick"></span></span>
+				<span class="bouton btnAddIssue" title="Ajouter un 'BUG'" issueType="bug"><span class="ui-icon ui-icon-plusthick"></span></span>
 			</div>
 			Liste des bugs
 		</div>
@@ -138,7 +130,7 @@
 	<div class="inline top marge30l" style="width:45%;">
 		<div class="ui-widget-header ui-corner-all big gras center pad5">
 			<div class="floatRight nano">
-				<span class="bouton" title="Ajouter un 'Want-More'" id="btnAddWM"><span class="ui-icon ui-icon-plusthick"></span></span>
+				<span class="bouton btnAddIssue" title="Ajouter un 'Want-More'" issueType="wantMore"><span class="ui-icon ui-icon-plusthick"></span></span>
 			</div>
 			Liste des "want-More"
 		</div>
