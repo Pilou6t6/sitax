@@ -41,11 +41,21 @@ function chooseThemeFolder() {
 	<script type="text/javascript" src="js/init_all_pages.js">// scripts et fonctions à charger pour toutes les pages</script>
 	<script type="text/javascript" src="js/interface.js">// gestions des menus </script>
 
-	<!--<script src="js/craftyslide.min.js">// Plugin du slideShow</script>-->
+	<script>
+		// Auth GitHub
+		<?php if (isset($_GET['code'])) : ?>
+			console.log('store le code GitHub (après redirection)...');
+			localStorage['codeAuthGitHub'] = "<?php echo $_GET['code'] ?>";
+			window.location = 'index.php?go=7bugHunter';
+		<?php endif; ?>
+	</script>
 </head>
 
 
 <?php
+	if (isset($_GET['code']))
+		die();
+
 	$hideLogo = '';
 	if (isset($_SESSION['orient']))
 		$orient = $_SESSION['orient'];
