@@ -37,7 +37,7 @@ function list_themes () {
 	<br />
 
 	<div class="ui-state-active ui-corner-all margeTop10 pad3" style="margin-bottom: 5px;">Dénoncer un Bug</div>
-	<a href="https://github.com/RobertManager/robert/issues/new" target="_new" /><img src="gfx/icones/bug.png" alt="NEW BUG" /></a>
+	<a href="?go=7bugHunter" /><img src="gfx/icones/bug.png" alt="NEW BUG" /></a>
 	<br />
 	-----------------------
 
